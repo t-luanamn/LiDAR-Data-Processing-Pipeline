@@ -1,0 +1,25 @@
+{
+	"pipeline": [
+		"data/BURW_final_ULS_reproj.laz",
+		{
+			"type": "filters.range",
+			"limits": "Classification[2:2]"
+		},
+		{
+			"type": "filters.outlier",
+			"method": "radius",
+			"radius": 1.0,
+			"min_k": 3
+		},
+		{
+			"type": "writers.las",
+			"filename": "output_ground.las"
+		},
+		{
+			"type": "writers.gdal",
+			"filename": "output_dem.tif",
+			"resolution": 1.0,
+			"output_type": "idw"
+		}
+	]
+}

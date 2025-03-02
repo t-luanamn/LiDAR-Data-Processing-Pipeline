@@ -1,0 +1,4 @@
+.DS_Store
+*.o
+.vscode
+data/BURW_final_ULS_reproj.laz
